@@ -31,6 +31,6 @@ app.register_blueprint(user_component, url_prefix='/user')
 app.register_blueprint(chat_component, url_prefix='/chat')
 socket.on_namespace(ChatApp('/'))
 
-
-app.run(ServerConf.host, ServerConf.port, ServerConf.debug)
-socket = SocketIO(app)
+if __name__ == '__main__':
+    app.run(ServerConf.host, ServerConf.port, ServerConf.debug)
+    socket = SocketIO(app, message_queue=ServerConf.redis_url)
