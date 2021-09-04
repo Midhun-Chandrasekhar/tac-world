@@ -3,7 +3,8 @@ import time
 import socketio
 from settings.conf import ServerConf
 
-CLIENT_COUNT = 50
+CLIENT_COUNT = 55
+DELAY = .02
 TEST_MESSAGES = [
     {'text': "Hello, call"},
     {'text': "Test Call"},
@@ -44,7 +45,7 @@ for msg in TEST_MESSAGES:
                 print("Virtual client {} sent {}".format(client.sid, str(msg)))
         except Exception as err:
             print(err)
-        time.sleep(.02)
+        time.sleep(DELAY)
     clients_status.append(active_connection)
 
 print("\n")

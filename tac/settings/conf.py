@@ -10,6 +10,7 @@ class ServerConf:
     debug = True
     endpoint = "http://localhost:8000"
     test_url = "http://localhost:8000"
+    redis_url = 'redis://localhost:6379/0'
 
 
 class AppConf:
