@@ -13,7 +13,7 @@ from flask_socketio import SocketIO
 from chat import ChatApp
 from api.chat import chat_component
 from api import user_component
-from settings.conf import ServerConf, AppConf, DBConf
+from settings.conf import ServerConf, DBConf
 
 app = Flask(__name__)
 app.config['MONGODB_SETTINGS'] = DBConf.mongo_conf

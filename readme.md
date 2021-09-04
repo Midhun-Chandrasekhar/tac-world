@@ -55,5 +55,5 @@ and also act as the FE server.
 </ul>
 
 <h2>Result</h2>
-<p>Load Test on 55 Virtual concurrent client on single Worker deployment</p>
-![alt text](https://github.com/Midhun-Chandrasekhar/tac-world/tree/main/tac/docs/images/loadt.png?raw=true)
+<p>Load Test on 55 Virtual concurrent client on single worker </p>
+https://github.com/Midhun-Chandrasekhar/tac-world/tree/main/tac/docs/images/loadt.png?raw=true

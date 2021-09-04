@@ -5,12 +5,14 @@ import os
 
 
 class ServerConf:
-    port = "8000"
+    port = 8000
     host = "0.0.0.0"
-    debug = True
+    debug = False
+    rhost = 'redis'
+    rport = 6379
     endpoint = "http://localhost:8000"
     test_url = "http://localhost:8000"
-    redis_url = 'redis://localhost:6379/0'
+    redis_url = 'redis://{}:{}/0'.format(rhost, rport)
 
 
 class AppConf:
@@ -20,7 +22,7 @@ class AppConf:
 
 class DBConf:
     db_name = 'tac_world'
-    host = 'localhost'
+    host = 'mongodb'
     port = 27017
     mongo_conf = {
         'db': db_name,
