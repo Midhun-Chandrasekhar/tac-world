@@ -42,18 +42,19 @@ and also act as the FE server.
 </ul>
 
 <h2>Project Setup</h2>
-<h4>Bare Metal deployment</h4>
+<h4>Container Local deployment</h4>
 <ul>
-<li>Setup MongoDB</li>
-<li>Setup Redis Server</li>
-<li>Setup Python 3.8 Virtual Environment</li>
-<li>Install the requirements using "pip install -r requirements.txt"</li>
-<li>Update the configurations in the settings directory</li>
-<li>run app using: gunicorn --worker-class eventlet dev_server:app</li>
-<li>Visit url: http://localhost:8000/ (check conf for modification)</li>
-<li>Load Testing: python test/test_chat.py (update the settings)</li>
+<li>Setup Docker</li>
+<li>Enter the Main Directory</li>
+<li>Execute: docker-compose up --build --scale app=2</li>
+<li>Entire Stack with Loadbalance, 2 App server, 1 Redis server and 1 MongoDB will start</li>
+<li>Visit url: http://localhost:81/</li>
+<li>Load Testing: python tac/test/test_chat.py (Note: Install requirements.txt)</li>
 </ul>
 
 <h2>Result</h2>
-<p>Load Test on 55 Virtual concurrent client on single worker </p>
-https://github.com/Midhun-Chandrasekhar/tac-world/tree/main/tac/docs/images/loadt.png?raw=true
+<li>Load Test on 50+ Virtual concurrent client on single flask worker</li>
+<li>Load Test on 100+ Virtual concurrent client on single App server</li>
+<li>Load Test on 510+ Virtual concurrent client on 1 LoadBalancer + 2 App Server + 1 DB + 1 Message Queue</li>
+<li>Screenshots of the results are attached in tac/docs/images/load-test-results/</li>
+</ul>

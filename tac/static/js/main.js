@@ -142,15 +142,16 @@ const doLogin = async (user_name) => {
       socket = io(options);
       socket = exe_sock(socket);
       socket.connect();
-      getChats();
-      
+      getChats();  
     }
     else{
       console.log("unexpected respose", response);
+      // TODO: Toast message or neccesary action
     };
   }
   catch(e){
     console.log("Something went wrong", e);
+    // TODO: Toast message or neccesary action
   }
 };
 
@@ -167,8 +168,12 @@ const getUsers = async () => {
       buildUserTiles(response.data);
     }
     else console.log("unexpected respose");
+    // TODO: Toast message or neccesary action
   }
-  catch(e){ console.log("Something went wrong", e);}
+  catch(e){ 
+    console.log("Something went wrong", e);
+    // TODO: Toast message or neccesary action
+  }
 };
 
 
@@ -184,9 +189,11 @@ const getChats = async () => {
       switchView("chat");
     }
     else console.log("unexpected respose", response);
+    // TODO: Toast message or neccesary action
   }
   catch(e){
     console.log("Something went wrong", e);
+    // TODO: Toast message or neccesary action
   }
 };
 
