@@ -41,6 +41,18 @@ and also act as the FE server.
 <li>Docker</li>
 </ul>
 
+<h2>Project Architecture</h2>
+<ul>
+<li>1 Load Balancer(Nginx) - Act as the primary contact node to public</li>
+<li>Entire App including the index page will be serverd by Gunicorn + eventlet workers</li>
+<li>2 App server is deployed to support the platform to provide better performance</li>
+<li>Every request to the Load balancer is proxied to App servers</li>
+<li>1 Redis server is used as Message queue. This can help the App servers to coordinate each other</li>
+<li>Redis support the system from failure tolerence.</li>
+<li>1 MongoDB is used as the central Database to store information related to User and Messages</li>
+<li>MongoEngine is used as ODM and DB manager</li>
+</ul>
+
 <h2>Project Setup</h2>
 <h4>Container Local deployment</h4>
 <ul>
