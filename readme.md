@@ -23,7 +23,6 @@ and also act as the FE server.
 <li>HTML</li>
 <li>Javascript</li>
 <li>Jquery</li>
-<li>Bootstrap4</li>
 <li>Socketio</li>
 </ul>
 <br>
@@ -69,4 +68,14 @@ and also act as the FE server.
 <li>Load Test on 100+ Virtual concurrent client on single App server</li>
 <li>Load Test on 510+ Virtual concurrent client on 1 LoadBalancer + 2 App Server + 1 DB + 1 Message Queue</li>
 <li>Screenshots of the results are attached in tac/docs/images/load-test-results/</li>
+</ul>
+
+<h2>Future Scope</h2>
+<li>FE migration to React</li>
+<li>User Enhancemnet</li>
+<li>Multiroom support</li>
+<li>Multimedia messaging</li>
+<li>Real time Audio/Video conference</li>
+<li>FE Mobile Application using ReactNative</li>
+<li>AI</li>
 </ul>
