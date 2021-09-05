@@ -50,7 +50,8 @@ and also act as the FE server.
 <li>Redis support the system from failure tolerence.</li>
 <li>1 MongoDB is used as the central Database to store information related to User and Messages</li>
 <li>MongoEngine is used as ODM and DB manager</li>
-<li>Architecture diagram with 4 App server is attached in tac/docs/documents/</li>
+<li>Architecture diagram with 4 App server is attached in docs/documents/</li>
+<li>Application Document is attached in docs/documents/</li>
 </ul>
 
 <h2>Project Setup</h2>
@@ -68,7 +69,7 @@ and also act as the FE server.
 <li>Load Test on 50+ Virtual concurrent client on single flask worker</li>
 <li>Load Test on 100+ Virtual concurrent client on single App server</li>
 <li>Load Test on 510+ Virtual concurrent client on 1 LoadBalancer + 2 App Server + 1 DB + 1 Message Queue</li>
-<li>Screenshots of the results are attached in tac/docs/images/load-test-results/</li>
+<li>Screenshots of the results are attached in docs/load-test-results/</li>
 </ul>
 
 <h2>Future Scope</h2>
