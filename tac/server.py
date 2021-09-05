@@ -13,15 +13,19 @@ from flask_socketio import SocketIO
 from chat import ChatApp
 from api.chat import chat_component
 from api import user_component
-from settings.conf import ServerConf, AppConf, DBConf
+from settings.conf import ServerConf, DBConf
 
+# Application configurations
 app = Flask(__name__)
 app.config['MONGODB_SETTINGS'] = DBConf.mongo_conf
-db = MongoEngine(app)
+MongoEngine(app)
 CORS(app)
-socket = SocketIO(app)
+# TODO: Centralised logger, Error Report Management
+socket = SocketIO(app, message_queue=ServerConf.redis_url)
+socket.init_app(app, cors_allowed_origins=ServerConf.cors_hosts)
 
 
+# App routes
 @app.route("/")
 def index():
     return render_template('index.html')
@@ -31,6 +35,6 @@ app.register_blueprint(user_component, url_prefix='/user')
 app.register_blueprint(chat_component, url_prefix='/chat')
 socket.on_namespace(ChatApp('/'))
 
+# Application Entry
 if __name__ == '__main__':
     app.run(ServerConf.host, ServerConf.port, ServerConf.debug)
-    socket = SocketIO(app, message_queue=ServerConf.redis_url)

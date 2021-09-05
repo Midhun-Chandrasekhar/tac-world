@@ -1,0 +1,26 @@
+
+version: '3'
+services:
+  app:
+    build: tac/
+    command: gunicorn --worker-class eventlet server:app --bind 0.0.0.0:8000 --log-level debug
+    links:
+      - db
+  db:
+    image: mongo:latest
+    hostname: mongodb
+    environment:
+      - MONGO_INITDB_DATABASE=tac_world
+    ports:
+      - 27017:27017
+  redis:
+    image: redis:latest
+    hostname: redis
+    ports:
+      - 6379:6379
+  nginx:
+    build: docker/nginx
+    ports:
+      - 81:80
+    depends_on:
+      - app

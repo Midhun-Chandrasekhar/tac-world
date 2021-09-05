@@ -3,8 +3,8 @@ import time
 import socketio
 from settings.conf import ServerConf
 
-CLIENT_COUNT = 55
-DELAY = .02
+CLIENT_COUNT = 530
+DELAY = .01
 TEST_MESSAGES = [
     {'text': "Hello, call"},
     {'text': "Test Call"},

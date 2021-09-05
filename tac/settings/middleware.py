@@ -10,8 +10,9 @@ from utils.response_codes import Messages, StatusCode
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
-        user_name = request.headers.get('user_name', None)
+        user_name = request.headers.get('user', None)
         user = User.objects(user_name=user_name).first()
+        # TODO: Implement Token Authentication
         if not user:
             return response_handler.error(status=StatusCode.un_authorised, message=Messages.un_authorised)
         return f(*args, **kwargs)
@@ -21,8 +22,9 @@ def login_required(f):
 
 def sock_auth(function):
     def user_auth(*args, **kwargs):
-        user_name = request.headers.get('user_name', None)
+        user_name = request.headers.get('user', None)
         user = User.objects(user_name=user_name).first()
+        # TODO: Implement Token Authentication
         if not user:
             disconnect()
             return

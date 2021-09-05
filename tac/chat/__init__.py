@@ -9,10 +9,12 @@ from utils.response_handler import socket_response
 class ChatApp(Namespace):
     @sock_auth
     def on_connect(self):
+        # TODO: Joining notification
         join_room(Room.name)
 
     @sock_auth
     def on_disconnect(self):
+        # TODO: Left notification
         leave_room(Room.name)
 
     @sock_auth
