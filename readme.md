@@ -50,6 +50,7 @@ and also act as the FE server.
 <li>Redis support the system from failure tolerence.</li>
 <li>1 MongoDB is used as the central Database to store information related to User and Messages</li>
 <li>MongoEngine is used as ODM and DB manager</li>
+<li>Architecture diagram with 4 App server is attached in tac/docs/documents/</li>
 </ul>
 
 <h2>Project Setup</h2>
