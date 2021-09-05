@@ -12,6 +12,7 @@ chat_component = Blueprint('chat', __name__)
 @chat_component.route('/')
 @login_required
 def chats():
+    # TODO: Pagination helper Module
     page = int(request.args.get('page', DEFAULT_PAGE))
     limit = int(request.args.get('limit', HISTORY_LENGTH))
     msgs = Message.objects.order_by('-created_at').paginate(page=page, per_page=limit).items

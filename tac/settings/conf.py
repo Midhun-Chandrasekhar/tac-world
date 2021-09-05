@@ -1,6 +1,11 @@
 """
 Server Configurations
+
+TODO: Once the platform for deployment is confirmed
+      Update the configuration to support multi environment
+      deployment
 """
+
 import os
 
 
@@ -8,16 +13,12 @@ class ServerConf:
     port = 8000
     host = "0.0.0.0"
     debug = False
-    rhost = 'redis'
-    rport = 6379
-    endpoint = "http://localhost:8000"
-    test_url = "http://localhost:8000"
-    redis_url = 'redis://{}:{}/0'.format(rhost, rport)
-
-
-class AppConf:
-    api = os.environ.get('API', False)
-    chat = os.environ.get('CHAT', False)
+    r_host = 'redis'
+    r_port = 6379
+    endpoint = "http://localhost:81/"
+    test_url = "http://localhost:81/"
+    redis_url = 'redis://{}:{}/0'.format(r_host, r_port)
+    cors_hosts = "*"
 
 
 class DBConf:

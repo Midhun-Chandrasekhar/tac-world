@@ -14,23 +14,30 @@ const loader = document.getElementById('loader');
 
 const windowSize = 100;
 let socket;
-const endPoint = "http://localhost:8000/";
+const endPoint = "http://localhost:81/";
 
 
-const headerOptions = (user_name) => {
+const headerOptions = (user) => {
   return {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
-    user_name
+    user
   }
 };
 
 
 const buildUserTile = (user_name) => {
   const card = document.createElement('div');
-  card.className = '';
+  const pic = document.createElement('div');
   const name = document.createElement('p');
+
+  card.className = 'user-tile';
+  pic.className = "dot";
+
+  pic.innerHTML = user_name[0];
   name.innerText = user_name;
+
+  card.appendChild(pic);
   card.appendChild(name);
   return card;
 };
@@ -50,29 +57,32 @@ const buildMessage = (data) => {
   const msg = document.createElement('div');
   const txt = document.createElement('p');
   const time = document.createElement('p');
-  const user = document.createElement('h6');
+  const user = document.createElement('p');
 
   pic.className = "dot";
   msg.className = "msg-card";
-  
+  user.className = "name";
+  time.className = "time";
+  txt.className = "msg";
+
   pic.innerHTML = data.sender[0];
   txt.innerHTML = data.text;
   time.innerHTML = "Time : " + data.created_at;
   
   if (data.sender === username.value){
     card.className = "message-box-right";
-    msg.appendChild(txt)
-    msg.appendChild(time)
+    msg.appendChild(txt);
+    msg.appendChild(time);
     card.appendChild(msg);
     card.appendChild(pic);
   }
   else{
     user.innerHTML = data.sender;
     card.className = "message-box-left";
-    msg.appendChild(user)
-    msg.appendChild(txt)
-    msg.appendChild(time)
-    card.appendChild(pic)
+    msg.appendChild(user);
+    msg.appendChild(txt);
+    msg.appendChild(time);
+    card.appendChild(pic);
     card.appendChild(msg);
   }
   return card;
@@ -128,7 +138,7 @@ const doLogin = async (user_name) => {
     });
     const response = await rawResponse.json();
     if (response.status === "ok" && response.message === "login_success" || response.message === "acc_created"){
-      const options = {autoConnect: false, extraHeaders: {user_name:username.value}};
+      const options = {autoConnect: false, extraHeaders: {user:username.value}, cors: { origin: "*"}};
       socket = io(options);
       socket = exe_sock(socket);
       socket.connect();

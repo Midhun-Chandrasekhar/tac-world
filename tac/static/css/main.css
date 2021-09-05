@@ -3,7 +3,7 @@
     width: 25px;
     background-color: #bbb;
     border-radius: 50%;
-    display: inline-block;
+    display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -17,7 +17,7 @@
 .body-box {
     padding: 30px;
     width:100%;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -26,12 +26,11 @@
 .chat-box{
     min-width: 320px;
     width: 100%;
-    height:100vh;
+    height:80vh;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     display: none;
-
 }
 
 .chat-space{
@@ -74,12 +73,12 @@ overflow-y: scroll;
 
 .user-box {
     min-width: 300px;
-    width: 70%; 
+    width: 50%; 
     height: 70vh;
     min-height: 300px;
     overflow-y: scroll;
-    padding: 10px;
 }
+
 
 .message-box-right {
     width: 100%;
@@ -101,9 +100,8 @@ overflow-y: scroll;
     display: flex;
     width: 70%;
     margin: 10px;
-    min-width: 250;
+    min-width: 250px;
     flex-direction: column;
-    font-size: 12px;
     padding: 10px;
     border-radius: 10px;
 }
@@ -113,9 +111,93 @@ overflow-y: scroll;
     display: flex;
     width: 70%;
     margin: 10px;
-    min-width: 250;
+    min-width: 250px;
     flex-direction: column;
-    font-size: 12px;
     padding: 10px;
     border-radius: 10px;
+}
+
+.blue-button {
+    background-color: #0099ff;
+    border: none;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+
+.red-button {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.lb-button {
+    background-color: deepskyblue;
+    border: none;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.txt-area{
+    text-align: left;
+    padding: 3px;
+    min-width: 150;
+    min-height: 20px;
+    margin: 5px;
+}
+
+.user-tile{
+    display: flex;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.time {
+    font-size: 13px;
+}
+
+.msg {
+    font-size: 18px;
+}
+
+.load-box{
+    min-width: 320px;
+    width: 100%;
+    height:80vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: none;
 }

@@ -2,58 +2,64 @@
 <html lang="en">
 <head>
     <title>Tac World</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" href="../static/images/fav.png" type="image/png" sizes="16x16">
     <link rel="stylesheet" href="../static/css/main.css">
-
 </head>
+
 <body>
-<div class="body-box">
-    <div id="loader" style="display:none;">
-        <div class="spinner-border text-primary"></div>
-    </div>
-    <div id="login" class="chat-box" style="display:flex">
-        <h5>Welcome</h5>
-        <h6>to</h6>
-        <h2>TAC WORLD</h2>
-        <div class="login-box">
-            <div>
-                <input type="text" id="username" placeholder="Username">
-                <button type="submit" id="connect" class="btn btn-primary" placeholder="username">Login</button>
+    <div class="body-box">
+
+        <div id="loader" class="load-box">
+            <div class="loader"></div> 
+        </div>
+
+        <div id="login" class="chat-box" style="display:flex">
+            <h5>Welcome</h5>
+            <h6>to</h6>
+            <h2>TAC WORLD</h2>
+
+            <div class="login-box">
+                <div>
+                    <input type="text" id="username" class="txt-area" placeholder="Username">
+                    <button type="submit" id="connect" class="blue-button">Login</button>
+                </div>
+
+                <div style="height:50px"></div>
+
+                <p>Not a user yet, No worries. 
+                <br>Just type your name. 
+                <br>Acc will be created automatically for you</p>
             </div>
-            <div style="height:50px"></div>
-            <p>Not a user yet, No worries. <br>Just type your name. <br>Acc will be created automatically for you</p>
-        </div>
 
-    </div>
-
-    <div id="room" class="chat-box">
-        <div class="head">
-            <button type="submit" id="disconnect" class="btn btn-danger">Logout</button>
-            <h5>TAC WORLD</h5>
-            <button type="submit" id="info" class="btn btn-info">Info</button>
         </div>
 
 
-        <div id="chat" class="chat-space"></div>
-        <div class="sender">
-            <input type="text" id="inp_message" class="type-area" placeholder="Enter message">
-            <button type="submit" id="send" class="btn btn-primary send-btn">Send</button>
+        <div id="room" class="chat-box">
+            <div class="head">
+                <button type="submit" id="disconnect" class="red-button">Logout</button>
+                <h5>TAC WORLD</h5>
+                <button type="submit" id="info" class="lb-button">Info</button>
+            </div>
+
+            <div id="chat" class="chat-space"></div>
+
+            <div class="sender">
+                <input type="text" id="inp_message" class="txt-area" placeholder="Enter message">
+                <button type="submit" id="send" class="blue-button">Send</button>
+            </div>
+
         </div>
 
-    </div>
 
-    <div id="userlist" class="chat-box">
-         <button type="submit" id="back" class="btn btn-info">Back to Room</button>
-         <div id="user-box" class="user-box"></div>
+        <div id="userlist" class="chat-box">
+            <button type="submit" id="back" class="lb-button">Back to Room</button>
+            <div id="user-box" class="user-box"></div>
+        </div>
     </div>
-
-    <div id="room-info"></div>
-</div>
 
     <script src="../static/js/jquery.js"></script>
     <script src="../static/js/socket.io.js"></script>
     <script src="../static/js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
