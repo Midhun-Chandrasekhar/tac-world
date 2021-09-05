@@ -2,7 +2,7 @@
 <p>Real Time scalable chat application</p>
 <br>
 <p><b>Auther: </b> Midhun Chandrasekhar</p>
-<p><b>Software Architect / Engineer</b></p>
+<p><b>Software Engineer</b></p>
 <p><b>Contact : </b>csekhar.jr@gmail.com</p>
 <br>
 <h2>Over View</h2>
