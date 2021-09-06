@@ -31,8 +31,8 @@ def index():
     return render_template('index.html')
 
 
-app.register_blueprint(user_component, url_prefix='/user')
-app.register_blueprint(chat_component, url_prefix='/chat')
+app.register_blueprint(user_component, url_prefix='/users')
+app.register_blueprint(chat_component, url_prefix='/chats')
 socket.on_namespace(ChatApp('/'))
 
 # Application Entry

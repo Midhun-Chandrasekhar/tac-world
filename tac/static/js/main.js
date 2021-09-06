@@ -131,7 +131,7 @@ const switchView = (view) => {
 const doLogin = async (user_name) => {
   switchView("loader");
   try{
-    const rawResponse = await fetch(endPoint+'user/login', {
+    const rawResponse = await fetch(endPoint+'users/login', {
       method: 'POST',
       headers: headerOptions(),
       body: JSON.stringify({user_name})
@@ -159,7 +159,7 @@ const doLogin = async (user_name) => {
 const getUsers = async () => {
   switchView("loader");
   try{
-    const rawResponse = await fetch(endPoint+'user/', {
+    const rawResponse = await fetch(endPoint+'users/', {
       headers: headerOptions(username.value)
     });
     const response = await rawResponse.json();
@@ -180,7 +180,7 @@ const getUsers = async () => {
 const getChats = async () => {
   switchView("loader");
   try{
-    const rawResponse = await fetch(endPoint+'chat/', {
+    const rawResponse = await fetch(endPoint+'chats/', {
       headers: headerOptions(username.value)
     });
     const response = await rawResponse.json();
