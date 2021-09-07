@@ -101,7 +101,7 @@ const injectChats = (messages) => {
 const switchView = (view) => {
   switch(view) {
     case "loader":
-      loader.style.display = "block";
+      loader.style.display = "flex";
       userListView.style.display = "none";
       roomView.style.display = "none";
       logView.style.display = "none";
