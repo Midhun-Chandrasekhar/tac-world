@@ -1,8 +1,8 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request
 
 from models.user import User
-from settings.middleware import login_required
 from utils import response_handler
+from utils.auth_modules import login_required
 from utils.response_codes import Messages
 
 user_component = Blueprint('api', __name__)

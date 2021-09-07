@@ -1,8 +1,8 @@
 from flask import Blueprint, request
 
 from models.chat import Message
-from settings.middleware import login_required
 from utils import response_handler
+from utils.auth_modules import login_required
 from utils.constants import HISTORY_LENGTH, DEFAULT_PAGE
 from utils.response_codes import Messages
 

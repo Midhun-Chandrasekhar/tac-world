@@ -2,7 +2,7 @@ from flask import request
 from flask_socketio import Namespace, emit, join_room, leave_room
 
 from models.chat import Message, Room
-from settings.middleware import sock_auth
+from utils.auth_modules import sock_auth
 from utils.response_handler import socket_response
 
 
